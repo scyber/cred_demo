@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated 21.10.2017 15:03:39 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="sakila" dynamic-insert="false" dynamic-update="false" mutable="true" name="Address" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="address">
-        <id name="addressId" type="java.lang.Short">
+    <class catalog="sakila" dynamic-insert="false" dynamic-update="false" mutable="true" name="ru.equifax.hbn.Address" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="address">
+        <id name="addressId" type="java.lang.Integer">
             <column name="address_id"/>
             <generator class="identity"/>
         </id>
+        <!--
         <many-to-one class="City" embed-xml="true" fetch="select" insert="true" name="city" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="city_id" not-null="true"/>
         </many-to-one>
+        -->
         <property generated="never" lazy="false" name="address" optimistic-lock="true" type="string" unique="false">
             <column length="50" name="address" not-null="true"/>
         </property>
@@ -30,6 +32,7 @@
         <property generated="never" lazy="false" name="lastUpdate" optimistic-lock="true" type="timestamp" unique="false">
             <column length="19" name="last_update" not-null="true"/>
         </property>
+        <!-- 
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="staffs" optimistic-lock="true" sort="unsorted" table="staff">
             <key on-delete="noaction">
                 <column name="address_id" not-null="true"/>
@@ -48,5 +51,6 @@
             </key>
             <one-to-many class="Store" embed-xml="true" not-found="exception"/>
         </set>
+        -->
     </class>
 </hibernate-mapping>

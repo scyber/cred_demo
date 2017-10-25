@@ -5,6 +5,7 @@
         
         <id name="languageId" type="java.lang.Integer">
             <column name="language_id"/>
+            
             <generator class="identity"/>
         </id>
         <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
@@ -12,8 +13,23 @@
         </property>
         <property generated="never" lazy="false" name="lastUpdate" optimistic-lock="true" type="timestamp" unique="false">
             <column length="19" name="last_update" not-null="true"/>
+            
         </property>
-        
+         
+        <property name="fValue">
+        	<formula>
+           ( select sum(l.language_id) 
+            from Language l ) 
+        	</formula>
+    	</property>
+    	<property name="modLanguage" insert="false" update="false">
+    		<column name="name" read="select (123456) from dual" write="select (?) from dual"/>
+    		
+    	</property>
+    	<property name="sqrtValue" type="java.lang.Integer" insert="false" update="false">
+    		<column name="language_id" read="sum(language_id)" write="(?)+2*4"/>
+    	</property>
+    	 
         <!-- <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="filmsForLanguageId" optimistic-lock="true" sort="unsorted" table="film">
             <key on-delete="noaction">
                 <column name="language_id" not-null="true"/>

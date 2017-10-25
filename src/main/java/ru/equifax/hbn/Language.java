@@ -12,6 +12,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.Formula;
 
 
 
@@ -25,13 +29,20 @@ public class Language implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer languageId;
+	
 	@Column(name="name")
 	private String name;
 	@Column(name="last_update")
 	private Date lastUpdate;
+	
+	@Transient
 	private Set filmsForLanguageId = new HashSet(0);
+	@Transient
 	private Set filmsForOriginalLanguageId = new HashSet(0);
-
+	
+	
+	
+	
 	public Language() {
 	}
 
@@ -46,11 +57,25 @@ public class Language implements java.io.Serializable {
 		this.filmsForLanguageId = filmsForLanguageId;
 		this.filmsForOriginalLanguageId = filmsForOriginalLanguageId;
 	}
-
+	@Transient
+	private Integer fValue;
+	@Formula("123+234")
+	public Integer getfValue(){
+		return this.fValue;
+	}
+	public void setfValue(int value){
+		this.fValue = value;
+	}
+	
+	
+	
+	
 	public Integer getLanguageId() {
 		return this.languageId;
 	}
-
+	
+	
+	
 	public void setLanguageId(Integer languageId) {
 		this.languageId = languageId;
 	}
@@ -58,7 +83,6 @@ public class Language implements java.io.Serializable {
 	public String getName() {
 		return this.name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}

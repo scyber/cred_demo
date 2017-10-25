@@ -19,12 +19,13 @@ public class AppHibernate {
 		Transaction tr = ses.getTransaction();
 		tr.begin();
 		Language lang = new Language();
+		Address adr = new Address();
 		//lang.setLanguageId(b);
-		lang.setName(langName);
-		lang.setLastUpdate(updateDate);
+		//lang.setName(langName);
+		//lang.setLastUpdate(updateDate);
 		
-		ses.save(lang);
-		tr.commit();
+		//ses.save(lang);
+		tr.rollback();
 		//ses.getTransaction().commit();
 		ses.close();
 		
