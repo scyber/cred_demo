@@ -1,5 +1,8 @@
 package ru.equifax.cred_demo;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -34,6 +37,11 @@ public class AppTest
     public void testApp()
     {
     	//System.out.println("Get data from Hibernate");
+    	Session ses = HibernateUtil.getSessionFactory().openSession();
+    	Transaction tr = ses.beginTransaction();
+    	tr.begin();
+    	tr.rollback();
+    	ses.close();
         assertTrue( true );
     }
 }

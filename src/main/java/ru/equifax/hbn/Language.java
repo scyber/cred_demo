@@ -28,9 +28,10 @@ public class Language implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer languageId;
+	@Column(name="language_id", columnDefinition="int")
+	private byte languageId;
 	
-	@Column(name="name")
+	@Column(name="name", columnDefinition="CHAR")
 	private String name;
 	@Column(name="last_update")
 	private Date lastUpdate;
@@ -70,13 +71,13 @@ public class Language implements java.io.Serializable {
 	
 	
 	
-	public Integer getLanguageId() {
+	public byte getLanguageId() {
 		return this.languageId;
 	}
 	
 	
 	
-	public void setLanguageId(Integer languageId) {
+	public void setLanguageId(byte languageId) {
 		this.languageId = languageId;
 	}
 

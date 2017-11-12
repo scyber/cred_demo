@@ -13,13 +13,13 @@ public class AppHibernate {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Byte b = 8;
-		String langName = "Romanian";
+		String langName = "Русский";
 		Date updateDate = new Date();	
 		Session ses = HibernateUtil.getSessionFactory().openSession();
 		Transaction tr = ses.getTransaction();
 		tr.begin();
-		Language lang = new Language();
-		Address adr = new Address();
+		//Language lang = new Language();
+		//Address adr = new Address();
 		//lang.setLanguageId(b);
 		//lang.setName(langName);
 		//lang.setLastUpdate(updateDate);

@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import ru.equifax.hbn.Address;
 import ru.equifax.hbn.Language;
@@ -22,9 +23,9 @@ public class HibernateGetData {
 		EntityManagerFactory em = ses.getEntityManagerFactory();
 		//Transaction ts = ses.getTransaction();
 		EntityManager e = em.createEntityManager();
-		e.getTransaction().begin();
-		//Transaction ts = (Transaction) e.getTransaction();
-		//ts.begin();
+		//e.getTransaction().begin();
+		Transaction ts = (Transaction) e.getTransaction();
+		ts.begin();
 		//List languages = ses.createQuery("select * from " + ru.equifax.hbn.Language.class.getName() + "").list();
 		List languages = ses.createQuery("from Language").list();
 		//List adr = ses.createQuery("from Address").list();
@@ -35,15 +36,18 @@ public class HibernateGetData {
 		for(Iterator it = languages.iterator(); it.hasNext();){
 		
 			Language lang = (Language) it.next();
+			System.out.println();
+			System.out.print(lang.getLanguageId() + " ");
 			System.out.print(lang.getLastUpdate() + " ");
-			System.out.println(lang.getLanguageId() + " ");
 			System.out.print(lang.getName() + " ");
-
-			//System.out.println(lang.getLanguageId() + " " + lang.getName() + " " +  lang.getLastUpdate() + " ");
-			
-
-			
+			//System.out.println(lang.getLanguageId() + " " + lang.getName() + " " +  lang.getLastUpdate() + " ");	
 		}
+		//Query upD = ses.createQuery("update Language set language_id = :langID" + " where name = :lang_name");
+		//upD.setParameter("langID", 7);
+		//upD.setParameter("lang_name", "Русский");
+		//upD.executeUpdate();
+		//ses.save(upD);
+		//e.getTransaction().commit();
 		e.getTransaction().rollback();
 		//ts.rollback();
 		ses.close();
