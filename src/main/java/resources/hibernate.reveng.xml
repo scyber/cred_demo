@@ -2,31 +2,29 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table-filter match-name="actor" match-catalog="sakila"></table-filter>
-	<table-filter match-name="actor_info" match-catalog="sakila"></table-filter>
-	<table-filter match-name="address" match-catalog="sakila"></table-filter>
-	<table-filter match-name="category" match-catalog="sakila"></table-filter>
-	<table-filter match-name="city" match-catalog="sakila"></table-filter>
-	<table-filter match-name="country" match-catalog="sakila"></table-filter>
-	<table-filter match-name="customer" match-catalog="sakila"></table-filter>
-	<table-filter match-name="customer_list" match-catalog="sakila"></table-filter>
-	<table-filter match-name="film" match-catalog="sakila"></table-filter>
-	<table-filter match-name="film_actor" match-catalog="sakila"></table-filter>
-	<table-filter match-name="film_category" match-catalog="sakila"></table-filter>
-	<table-filter match-name="film_list" match-catalog="sakila"></table-filter>
-	<table-filter match-name="film_text" match-catalog="sakila"></table-filter>
-	<table-filter match-name="inventory" match-catalog="sakila"></table-filter>
-	<table-filter match-name="language" match-catalog="sakila"></table-filter>
-	<table-filter match-name="nicer_but_slower_film_list"
-		match-catalog="sakila">
-	</table-filter>
-	<table-filter match-name="payment" match-catalog="sakila"></table-filter>
-	<table-filter match-name="rental" match-catalog="sakila"></table-filter>
-	<table-filter match-name="sales_by_film_category"
-		match-catalog="sakila">
-	</table-filter>
-	<table-filter match-name="sales_by_store" match-catalog="sakila"></table-filter>
-	<table-filter match-name="staff" match-catalog="sakila"></table-filter>
-	<table-filter match-name="staff_list" match-catalog="sakila"></table-filter>
-	<table-filter match-name="store" match-catalog="sakila"></table-filter>
+<type-mapping>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+</type-mapping>
 </hibernate-reverse-engineering>

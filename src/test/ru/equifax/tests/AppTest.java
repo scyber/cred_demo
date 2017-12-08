@@ -1,4 +1,5 @@
-package ru.equifax.cred_demo;
+package ru.equifax.tests;
+
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -6,6 +7,7 @@ import org.hibernate.Transaction;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import ru.equifax.common.HibernateUtil;
 
 /**
  * Unit test for simple App.

@@ -1,4 +1,4 @@
-package ru.equifax.cred_demo;
+package ru.equifax.tests;
 
 import java.util.Iterator;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import ru.equifax.common.HibernateUtil;
 import ru.equifax.hbn.Address;
 import ru.equifax.hbn.Language;
 

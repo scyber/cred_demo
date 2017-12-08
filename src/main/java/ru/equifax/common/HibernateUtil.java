@@ -1,4 +1,6 @@
-package ru.equifax.cred_demo;
+package ru.equifax.common;
+
+import java.nio.file.Paths;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -16,14 +18,18 @@ public class HibernateUtil {
     {
         try
         {
+        	SessionFactory sf = new Configuration().configure("resources/hibernate.cfg.xml").buildSessionFactory();
+        	return sf;
+        	//System.out.println(System.getProperty("user.dir"));
         	//Configuration cfg = new Configuration();
-        	//cfg.configure("resources/hibernate.cfg.xml");
-        	
-        	//StandardServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
+        	//cfg.configure("src\\main\\resources\\hibernate.cfg.xml");
+        	//System.out.println(Paths.get(".").toAbsolutePath().normalize().toString());
+        	//StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
         	// SessionFactory sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
-        	StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-            Metadata metadata = new MetadataSources(standardRegistry).getMetadataBuilder().build();
-            return metadata.getSessionFactoryBuilder().build();
+        	
+        	//StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure("src/hibernate.cfg.xml").build();
+            //Metadata metadata = new MetadataSources(standardRegistry).getMetadataBuilder().build();
+            //return metadata.getSessionFactoryBuilder().build();
         	
         	
             //return sessionFactory;

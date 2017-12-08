@@ -1,4 +1,4 @@
-package ru.equifax.cred_demo;
+package ru.equifax.common;
 
 
 import javax.xml.bind.JAXBContext;
